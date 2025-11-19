@@ -24,8 +24,7 @@
             <h1 class="kinetic-text">WALK <br> <span>TOGETHER.</span></h1>
             <p class="animate-in delay-1">DOMINATE YOUR STEPS. CRUSH YOUR FRIENDS. LIVE IN IMESSAGE.</p>
             <div class="hero-actions animate-in delay-2">
-              <a href="#" class="btn btn-primary">Download Now</a>
-              <a href="#demo" class="btn btn-outline">Watch Trailer</a>
+              <button id="join-waitlist-btn" class="btn btn-primary">Join Waitlist</button>
             </div>
           </div>
 
@@ -73,6 +72,21 @@
     </main>
   </div>
 
+  <!-- Waitlist Modal -->
+  <div id="waitlist-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="close-modal" class="close-btn">&times;</button>
+      <h2>JOIN THE RANK</h2>
+      <p>Be the first to know when the war begins.</p>
+      <form id="waitlist-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="input-group">
+          <input type="email" name="email" placeholder="ENTER YOUR EMAIL" required>
+          <button type="submit" class="btn btn-primary">JOIN</button>
+        </div>
+        <p class="form-status" id="form-status"></p>
+      </form>
+    </div>
+  </div>
   <script type="module" src="/src/main.js"></script>
 </body>
 

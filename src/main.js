@@ -74,4 +74,83 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const animatedElements = document.querySelectorAll('.feature-item, .hero-actions, p.animate-in');
   animatedElements.forEach(el => observer.observe(el));
+
+  // --- Waitlist Modal Logic ---
+  const modal = document.getElementById('waitlist-modal');
+  const openBtn = document.getElementById('join-waitlist-btn');
+  const closeBtn = document.getElementById('close-modal');
+  const form = document.getElementById('waitlist-form');
+  const status = document.getElementById('form-status');
+
+  if (openBtn && modal) {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      status.textContent = '';
+      status.className = 'form-status';
+      modal.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    // Handle Form Submission
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const emailInput = form.querySelector('input[name="email"]');
+      const email = emailInput.value.trim();
+
+      // Basic Email Validation Regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        status.textContent = "ENTER A VALID EMAIL.";
+        status.className = "form-status error";
+        return; // Stop submission
+      }
+
+      status.textContent = "CONNECTING TO SERVER...";
+      status.className = "form-status";
+
+      // REPLACE THIS URL WITH YOUR GOOGLE SCRIPT URL
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxBph3TC1UlSdDWvuSY3INkpjg62u2PtO-ZDZ_xgfl__D2g-Iwfon5NT3Oqs-ZwbxEd_Q/exec';
+
+      try {
+        if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+          throw new Error("Script URL not set");
+        }
+
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: data,
+          mode: 'no-cors' // Important for Google Sheets
+        });
+
+        status.textContent = "YOU ARE ON THE LIST.";
+        status.classList.add('success');
+        form.reset();
+        setTimeout(() => modal.classList.remove('active'), 2000);
+
+      } catch (error) {
+        console.error('Error:', error);
+        // Fallback for demo purposes if URL isn't set yet
+        if (error.message === "Script URL not set") {
+          status.textContent = "DEMO MODE: SUCCESS (Set URL to save)";
+          status.classList.add('success');
+          setTimeout(() => modal.classList.remove('active'), 2000);
+        } else {
+          status.textContent = "CONNECTION FAILED. TRY AGAIN.";
+          status.classList.add('error');
+        }
+      }
+    });
+  }
 });
