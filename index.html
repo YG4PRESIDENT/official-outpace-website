@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/src/style.css" />
+  <title>OUTPACE - iMessage Step Counter</title>
+  <meta name="description" content="The step counter that lives natively within your iMessage chats." />
+</head>
+
+<body>
+
+  <div class="app-frame">
+    <header class="site-header">
+      <div class="logo">OUTPACE</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="kinetic-text">WALK <br> <span>TOGETHER.</span></h1>
+            <p class="animate-in delay-1">DOMINATE YOUR STEPS. CRUSH YOUR FRIENDS. LIVE IN IMESSAGE.</p>
+            <div class="hero-actions animate-in delay-2">
+              <a href="#" class="btn btn-primary">Download Now</a>
+              <a href="#demo" class="btn btn-outline">Watch Trailer</a>
+            </div>
+          </div>
+
+          <div class="hero-visual animate-in delay-3">
+            <div class="phone-mockup">
+              <div class="screen">
+                <div class="screen-header">MY STATS</div>
+                <div class="stat-box">
+                  <div class="stat-label">TODAY</div>
+                  <div class="stat-num" id="step-count">0</div>
+                </div>
+                <div class="stat-box">
+                  <div class="stat-label">RANK</div>
+                  <div class="stat-num" id="rank-display">#2</div>
+                </div>
+                <div class="chat-container" id="chat-container">
+                  <!-- Dynamic Chat Content -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="features-grid">
+          <div class="feature-item">
+            <h3>NATIVE SYNC</h3>
+            <p>Lives directly in iMessage. No extra apps to open. Just walk and talk.</p>
+          </div>
+          <div class="feature-item">
+            <h3>GROUP WARS</h3>
+            <p>Turn any group chat into a battlefield. Who walked the most today?</p>
+          </div>
+          <div class="feature-item">
+            <h3>PRIVACY FIRST</h3>
+            <p>Your data stays on your device. We don't sell your steps.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <p>© 2025 OUTPACE. ALL RIGHTS RESERVED.</p>
+      </footer>
+    </main>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
