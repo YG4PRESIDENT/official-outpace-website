@@ -108,13 +108,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const emailInput = form.querySelector('input[name="email"]');
       const email = emailInput.value.trim();
 
-      // Basic Email Validation Regex
+      // Enhanced Email Validation with friendly messages
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      if (!emailRegex.test(email)) {
-        status.textContent = "ENTER A VALID EMAIL.";
+      if (!email) {
+        status.textContent = "We'd love to have you! Just need your email first.";
         status.className = "form-status error";
-        return; // Stop submission
+        return;
+      }
+
+      if (!email.includes('@')) {
+        status.textContent = "Almost there! Don't forget the @ symbol.";
+        status.className = "form-status error";
+        return;
+      }
+
+      if (!emailRegex.test(email)) {
+        status.textContent = "Hmm, that doesn't look quite right. Try something like name@example.com";
+        status.className = "form-status error";
+        return;
       }
 
       status.textContent = "CONNECTING TO SERVER...";
