@@ -1,13 +1,14 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/official-outpace-website/',
+  base: '/',
   build: {
     rollupOptions: {
       input: {
         main: 'index.html',
         privacy: 'privacy.html',
         terms: 'terms.html',
+        support: 'support.html',
       },
     },
   },
