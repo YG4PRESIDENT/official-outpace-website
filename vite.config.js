@@ -8,6 +8,7 @@ export default defineConfig({
         main: 'index.html',
         privacy: 'privacy.html',
         terms: 'terms.html',
+        support: 'support.html',
       },
     },
   },
