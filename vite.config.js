@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/official-outpace-website/',
+  base: '/',
   build: {
     rollupOptions: {
       input: {
