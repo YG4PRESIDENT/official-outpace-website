@@ -16,8 +16,18 @@ for(const name of pages){
  check(text.includes('id="main"')&&text.includes('Skip to content'),'skip link missing');
  check(!/<form\b|<iframe\b/i.test(text),'unexpected form or iframe');
  const scripts=[...text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
- check(scripts.length===1,'expected one footer module');
- check(scripts.every(([,attrs,body])=>/\btype="module"/.test(attrs)&&/\bsrc="(?:\.\/|\/)assets\/footer-physics-[\w-]+\.js"/.test(attrs)&&!body.trim()),'unexpected inline or external script');
+ const dataScripts=scripts.filter(([,attrs])=>/^\s+type="application\/ld\+json"\s*$/.test(attrs));
+ const runtimeScripts=scripts.filter(script=>!dataScripts.includes(script));
+ check(runtimeScripts.length===1,'expected one footer module');
+ check(runtimeScripts.every(([,attrs,body])=>/\btype="module"/.test(attrs)&&/\bsrc="(?:\.\/|\/)assets\/footer-physics-[\w-]+\.js"/.test(attrs)&&!body.trim()),'unexpected inline or external executable script');
+ check(dataScripts.length===(name==='index'?1:0),'expected one homepage-only JSON-LD data block');
+ if(dataScripts.length){
+  try{const data=JSON.parse(dataScripts[0][2]);check(JSON.stringify(data)===JSON.stringify({'@context':'https://schema.org','@type':'WebSite',name:'Outpace',url:'https://outpaceapp.com/',inLanguage:'en'}),'unexpected WebSite structured data');}
+  catch{check(false,'invalid structured-data JSON');}
+ }
+ check(text.includes('property="og:image" content="https://outpaceapp.com/outpace-social.png"'),'social preview missing');
+ check(text.includes('property="og:image:width" content="1200"')&&text.includes('property="og:image:height" content="630"'),'social preview dimensions missing');
+ check(text.includes('name="twitter:card" content="summary_large_image"')&&text.includes('name="twitter:image:alt"'),'Twitter preview metadata missing');
  check(!/support@virtualpiratesllc\.com|Supabase|script\.google\.com|YOUR_|TODO|Lorem ipsum/.test(text),'stale content');
  check(!/App Store|Google Play/.test(text)||!/(apps\.apple\.com|play\.google\.com)/.test(text),'unverified store destination');
  for(const match of text.matchAll(/(?:href|src)="([^"]+)"/g)){
@@ -29,6 +39,7 @@ for(const name of pages){
  }
  for(const img of text.matchAll(/<img\b([^>]+)>/g))check(/\balt="[^"]*"/.test(img[1]),'image missing alt');
 }
+for(const file of ['outpace-social.png','favicon.ico','favicon-32.png','apple-touch-icon.png'])if(!fs.existsSync(path.join(root,file)))failures.push(`Missing metadata asset ${file}`);
 const assets=fs.readdirSync(path.join(root,'assets'));
 const js=assets.filter(x=>x.endsWith('.js'));
 if(js.length!==1||!/^footer-physics-[\w-]+\.js$/.test(js[0]))failures.push('Expected only the same-origin footer JavaScript bundle');

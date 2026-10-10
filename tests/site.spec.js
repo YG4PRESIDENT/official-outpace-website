@@ -19,8 +19,14 @@ for (const route of routes) {
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
     await expect(page.locator('form, iframe')).toHaveCount(0);
-    // The requested footer field has one bundled same-origin module; inline and external scripts remain disallowed.
-    const script = page.locator('script');
+    // Allow one homepage-only inert JSON-LD data block and one bundled same-origin footer module.
+    const data = page.locator('script[type="application/ld+json"]');
+    await expect(data).toHaveCount(route==='/'?1:0);
+    if(route==='/'){
+      expect(await data.getAttribute('src')).toBeNull();
+      expect(JSON.parse(await data.textContent())).toEqual({'@context':'https://schema.org','@type':'WebSite',name:'Outpace',url:'https://outpaceapp.com/',inLanguage:'en'});
+    }
+    const script = page.locator('script:not([type="application/ld+json"])');
     await expect(script).toHaveCount(1);
     await expect(script).toHaveAttribute('type', 'module');
     expect(await script.textContent()).toBe('');
