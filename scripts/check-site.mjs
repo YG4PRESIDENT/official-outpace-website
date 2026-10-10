@@ -11,7 +11,8 @@ for(const name of pages){
  check(text.includes('name="viewport"'),'viewport missing');
  check(text.includes('rel="canonical"'),'canonical missing');
  check(text.includes('name="description"'),'description missing');
- check(name==='404'?text.includes('<base href="/">'):!/<base\b/i.test(text),'only the 404 page should resolve nested URLs from the site root');
+ const bases=[...text.matchAll(/<base\b[^>]*>/gi)];
+ check(name==='404'?bases.length===1&&bases[0][0]==='<base href="/">':bases.length===0,'only the 404 page should have one root base');
  check(text.includes('id="main"')&&text.includes('Skip to content'),'skip link missing');
  check(!/<form\b|<iframe\b/i.test(text),'unexpected form or iframe');
  const scripts=[...text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];

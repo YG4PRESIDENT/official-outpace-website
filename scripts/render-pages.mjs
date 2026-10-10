@@ -23,4 +23,4 @@ if(fs.existsSync(legalPath)){
 console.log('Rendered homepage, how-it-works and available information pages.');
 
 const missing=`<main id="main"><section class="page-intro section-wrap"><p class="eyebrow dark">404 / ONE STEP OFF TRACK</p><h1>Let’s get you<br>back to<br><em>your people.</em></h1><p>That page isn’t here. Head home, or ask us for a hand.</p><a class="button button-blue" href="./">Back to Outpace <span>↗</span></a> <a class="text-link" href="./support.html">Get support <span>↗</span></a></section></main>`;
-fs.writeFileSync('404.html',shell('Page not found — Outpace','Return to Outpace or get support.','404.html',missing).replace('<head>','<head><base href="/">').replace('<meta name="description"','<meta name="robots" content="noindex"><meta name="description"'));
+fs.writeFileSync('404.html',shell('Page not found — Outpace','Return to Outpace or get support.','404.html',missing).replace('<meta name="description"','<meta name="robots" content="noindex"><meta name="description"'));
