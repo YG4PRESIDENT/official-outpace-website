@@ -145,6 +145,8 @@ function createFooterField(canvas) {
     frame = 0;
     if (!allowed()) {
       reset();
+      // Media queries can update before their change event. Paint the resting state now.
+      if (visible && !document.hidden) draw();
       return;
     }
     const elapsed = lastTime ? clamp((time - lastTime) / 1000, 1 / 240, 1 / 30) : 1 / 60;
