@@ -11,8 +11,12 @@ for(const name of pages){
  check(text.includes('name="viewport"'),'viewport missing');
  check(text.includes('rel="canonical"'),'canonical missing');
  check(text.includes('name="description"'),'description missing');
+ check(name==='404'?text.includes('<base href="/">'):!/<base\b/i.test(text),'only the 404 page should resolve nested URLs from the site root');
  check(text.includes('id="main"')&&text.includes('Skip to content'),'skip link missing');
- check(!/<script\b|<form\b|<iframe\b/i.test(text),'unexpected script, form or iframe');
+ check(!/<form\b|<iframe\b/i.test(text),'unexpected form or iframe');
+ const scripts=[...text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)];
+ check(scripts.length===1,'expected one footer module');
+ check(scripts.every(([,attrs,body])=>/\btype="module"/.test(attrs)&&/\bsrc="(?:\.\/|\/)assets\/footer-physics-[\w-]+\.js"/.test(attrs)&&!body.trim()),'unexpected inline or external script');
  check(!/support@virtualpiratesllc\.com|Supabase|script\.google\.com|YOUR_|TODO|Lorem ipsum/.test(text),'stale content');
  check(!/App Store|Google Play/.test(text)||!/(apps\.apple\.com|play\.google\.com)/.test(text),'unverified store destination');
  for(const match of text.matchAll(/(?:href|src)="([^"]+)"/g)){
@@ -25,6 +29,7 @@ for(const name of pages){
  for(const img of text.matchAll(/<img\b([^>]+)>/g))check(/\balt="[^"]*"/.test(img[1]),'image missing alt');
 }
 const assets=fs.readdirSync(path.join(root,'assets'));
-if(assets.some(x=>x.endsWith('.js')))failures.push('Unexpected JavaScript bundle');
+const js=assets.filter(x=>x.endsWith('.js'));
+if(js.length!==1||!/^footer-physics-[\w-]+\.js$/.test(js[0]))failures.push('Expected only the same-origin footer JavaScript bundle');
 if(failures.length){console.error(failures.join('\n'));process.exit(1)}
-console.log(`PASS: ${pages.length} pages; ${refs} local references; metadata, headings, skip links, image alt, no runtime JS/forms, no stale support/stack.`);
+console.log(`PASS: ${pages.length} pages; ${refs} local references; metadata, headings, skip links, image alt, one same-origin footer module, no forms/iframes, no stale support/stack.`);

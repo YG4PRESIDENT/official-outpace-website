@@ -26,10 +26,11 @@ The build renders eight HTML pages, including a custom 404, into `dist/`. `npm r
 - `scripts/render-pages.mjs`: shared layout, home and how-it-works pages
 - `content/legal.json`: privacy, terms, competition rules, support and deletion text
 - `src/style.css`: responsive design system
+- `src/footer-physics.js`: original decorative Canvas2D glyph springs; same-origin module, no data collection
 - `public/`: original Outpace character, app calendar capture, icon and hosting metadata
 - `scripts/check-site.mjs`: links/assets, metadata, headings, skip links and stale-content checks
 
-Root HTML files are generated for review; edit the canonical source and run the build. Asset and page links are relative. Canonical URLs target outpaceapp.com. No runtime JavaScript, external fonts, analytics, signup forms or payments are added. Native HTML disclosures power the FAQ. Email links open the visitor's email app and do not send automatically.
+Root HTML files are generated for review; edit the canonical source and run the build. Asset and page links are relative. Canonical URLs target outpaceapp.com. The only runtime JavaScript is a small same-origin module for the decorative footer. It uses no storage, network calls or third-party dependencies. Mouse movement displaces an anchored glyph field; spring motion sleeps after settling, offscreen and when the page is hidden. Touch devices and system reduced motion show a static field. Support/legal navigation and the faint wordmark remain semantic HTML. No external fonts, analytics, signup forms or payments are added. Native HTML disclosures power the FAQ. Email links open the visitor's email app and do not send automatically.
 
 ## Product references
 

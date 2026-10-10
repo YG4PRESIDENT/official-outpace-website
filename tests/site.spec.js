@@ -18,7 +18,15 @@ for (const route of routes) {
     await expect(page.locator('h1')).toHaveCount(1);
     await expect(page.locator('h1')).toBeVisible();
     await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
-    await expect(page.locator('form, iframe, script')).toHaveCount(0);
+    await expect(page.locator('form, iframe')).toHaveCount(0);
+    // The requested footer field has one bundled same-origin module; inline and external scripts remain disallowed.
+    const script = page.locator('script');
+    await expect(script).toHaveCount(1);
+    await expect(script).toHaveAttribute('type', 'module');
+    expect(await script.textContent()).toBe('');
+    const scriptURL = new URL(await script.getAttribute('src'), page.url());
+    expect(scriptURL.origin).toBe(new URL(page.url()).origin);
+    expect(scriptURL.pathname).toMatch(/^\/assets\/footer-physics-[\w-]+\.js$/);
     await page.locator('footer').scrollIntoViewIfNeeded();
     await page.waitForLoadState('networkidle');
     const layout = await page.evaluate(() => ({
