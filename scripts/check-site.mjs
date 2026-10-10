@@ -18,7 +18,7 @@ for(const name of pages){
  for(const match of text.matchAll(/(?:href|src)="([^"]+)"/g)){
   const value=match[1]; if(/^(https?:|mailto:|data:)/.test(value))continue;
   if(value.startsWith('#')){check(text.includes(`id="${value.slice(1)}"`),`missing anchor ${value}`);continue;}
-  const [pathname,anchor]=value.split('#');let dest=path.resolve(path.dirname(file),pathname);if(value==='./')dest=path.join(root,'index.html');
+  const [pathname,anchor]=value.split('#');let dest=pathname.startsWith('/')?path.join(root,pathname):path.resolve(path.dirname(file),pathname);if(value==='./'||value==='/')dest=path.join(root,'index.html');
   check(fs.existsSync(dest),`missing ${value}`);refs++;
   if(anchor&&fs.existsSync(dest))check(fs.readFileSync(dest,'utf8').includes(`id="${anchor}"`),`missing destination anchor ${value}`);
  }

@@ -8,9 +8,11 @@
     "build": "vite build",
     "preview": "vite preview",
     "prebuild": "node scripts/render-pages.mjs",
-    "check": "node scripts/check-site.mjs"
+    "check": "node scripts/check-site.mjs",
+    "test": "playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.64.0",
     "vite": "^7.2.2"
   }
 }

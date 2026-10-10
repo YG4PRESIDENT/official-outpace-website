@@ -42,3 +42,7 @@ The first release is free social competition with optional non-redeemable play p
 The site is intended for the existing outpaceapp.com Cloudflare setup. `_headers`, robots and sitemap are included. Preserve all unrelated DNS and email records when connecting the domain. Verify the actual production response headers, redirects, canonical paths, HTTPS and error page after deployment. Do not assume a successful build establishes deployment or visual acceptance.
 
 This branch includes the existing PR2 website corrections and semver-compatible build-tool security updates. Review notes and evidence remain local and are excluded from repository publication.
+
+## Browser checks
+
+Run `npx playwright install chromium` once, then `npm test` after the production build. GitHub Actions installs Chromium on its normal runner and exercises all eight pages at 1440, 768, 390 and 320 pixels. The report includes screenshots of the homepage, privacy and support pages, plus checks for horizontal overflow, image loading, navigation, repeated FAQ controls and keyboard skip links. The `outpace-browser-report` artifact is retained for 14 days. Automated checks complement the final preview and production inspection.
