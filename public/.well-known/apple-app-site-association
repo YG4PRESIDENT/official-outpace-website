@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "FBBT7DGB33.com.virtualpiratesllc.imessagewalkingapp"
+        ],
+        "components": [
+          {
+            "/": "/i/*",
+            "comment": "Outpace friend invitations only."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "pages": {
+    "privacy": {
+      "slug": "privacy.html",
+      "title": "Privacy Policy",
+      "description": "How Outpace handles your account, step totals, photos, groups and privacy choices.",
+      "intro": [
+        "Outpace is operated by Vrtl Pirates LLC. This policy explains how we handle information through the Outpace website, support and app. Contact us at support@outpaceapp.com.",
+        "This website provides information about Outpace. It has no app-account registration or health-upload form. The app sections below describe information handled when you use Outpace’s free step-competition features. App availability is separate from access to this website.",
+        "Outpace’s app is intended for adults 18 and older. You choose whether to connect health data, join groups, accept friends and share photos. Competition features use information stored on our servers as described below."
+      ],
+      "sections": [
+        {
+          "heading": "Your account",
+          "paragraphs": [
+            "Clerk handles sign-in and verifies the contact information associated with your chosen sign-in method. Signing in with a provider may supply an email address, an Apple private relay address or a suggested name. You choose the display name you use in Outpace.",
+            "Outpace stores an account identifier, your chosen display name, profile settings and records of your age declaration and competition-rule acceptance. It also stores the social connections, group memberships, blocks, hidden-friend preferences and optional broad city-area selection you create in the app."
+          ]
+        },
+        {
+          "heading": "Steps and private activity",
+          "paragraphs": [
+            "Connecting health data is optional. On iPhone, Outpace reads permitted information from Apple Health through HealthKit. In a supported Android version, it uses Health Connect. Depending on your app version, onboarding asks for steps alone or steps, walking/running distance and active energy together. You choose which categories to allow or can connect later. Private distance and energy preferences start enabled for new members who connect in the updated setup; existing choices are preserved. You can turn these preferences off in Activity settings. Earlier versions request additional permissions when you enable those options.",
+            "Outpace uploads aggregate step totals for the competition windows you participate in, along with sync times and the identifiers needed to connect those totals to your account and competitions. Your private activity calendar stores daily step totals and the dates, timezones and windows needed to display that history. Walking distance and active energy are stored as private daily aggregates only while the relevant preference is enabled and permitted data is available. They do not affect competition rankings or appear to other members.",
+            "The app reads health information on your device to calculate these totals. It does not upload individual health samples or workout routes. Competition totals can refresh when you open or return to the app and while it is active.",
+            "We use these totals to show your activity, calculate competition results and maintain result history. You can revoke health permissions in your device settings. Revoking permission does not itself delete information already synced to Outpace."
+          ]
+        },
+        {
+          "heading": "What friends and group members can see",
+          "paragraphs": [
+            "Your display name and shared competition totals are visible to current members of the relevant group and mutually accepted friends, according to the competition you join. Your private calendar, walking distance and active calories are not shared through rankings.",
+            "Public groups allow people to join. Private groups require an invitation. Consider the membership of a group before sharing competition information or a photo with it.",
+            "Hiding a friend changes your roster. Blocking hides reactions and winner images across that connection. Blocking does not remove shared-group competition records; those records follow group membership."
+          ]
+        },
+        {
+          "heading": "Photos and reactions",
+          "paragraphs": [
+            "If you upload a default winner photo or a photo for a particular win, Outpace receives the original file for processing. The server decodes and re-encodes it into a new image, removing embedded metadata such as location information. The original upload is temporary processing material; the stored image is associated with your account or a result.",
+            "Winner photos go through review before being published to friends or groups. The service checks a viewer’s current access before delivering a shared winner image. Group admins can remove reported winner images, and a friends-circle viewer can remove an image from their own circle.",
+            "We also store reactions, reports and image-review records so these features can operate and concerns can be reviewed. Upload only photos you have the right to share and avoid including someone else’s private information."
+          ]
+        },
+        {
+          "heading": "City-area discovery",
+          "paragraphs": [
+            "You may manually choose a broad US city area to discover public groups whose admins have opted into discovery. This feature does not request GPS or create a directory of nearby people. You can clear your selected area, hide a group from your discovery list or change the discovery setting for a group you administer."
+          ]
+        },
+        {
+          "heading": "Play points",
+          "paragraphs": [
+            "If you use a play-points group, Outpace stores the points balance, your automatic-entry consent and the entries, results and adjustments needed to run that group. Play points have no cash value. They cannot be bought, withdrawn, donated or redeemed. The free release does not collect real-money entry payments or make cash payouts."
+          ]
+        },
+        {
+          "heading": "Support and diagnostics",
+          "paragraphs": [
+            "When you use Help & feedback, Outpace stores your message and the support conversation so we can respond in the app. If you contact us by email, we receive your email address and the information you include. Please do not send passwords, sign-in codes, payment credentials or unnecessary medical details.",
+            "App diagnostics are associated with your account and record a fixed error code, platform, build and time. They help us investigate app failures. The current app diagnostic records are scheduled for deletion after 30 days and are also removed by account deletion."
+          ]
+        },
+        {
+          "heading": "Providers and website requests",
+          "paragraphs": [
+            "Outpace uses Clerk for authentication and Convex for application data and hosted services. These providers process the information needed to perform their services, including relevant network, device and security metadata. This is separate from information you choose to share with friends and groups.",
+            "When you visit the website, your browser sends the information needed to request its pages and resources, such as your IP address and browser request information, to the services delivering them. Information you send through support is handled as described above."
+          ]
+        },
+        {
+          "heading": "Retention and account deletion",
+          "paragraphs": [
+            "Account information, social records and activity history are retained to provide your account and its history until you remove the relevant information through an available control or delete your account. Unused earlier image assets become eligible for cleanup after 90 days. Current default photos remain while selected on your account, and images referenced by retained results can remain with those results. Deleting a group removes images uploaded specifically for its results; a default photo still used by your account or another result can remain.",
+            "You can request deletion inside the app. Once the server accepts the request, access to the account closes immediately. A server workflow then removes your personal step and activity history, uploaded image assets, social information, in-app support messages, diagnostics, image-review records and Clerk sign-in identity. The workflow continues if you close the app and retries delayed steps.",
+            "Groups with other members continue, with administration transferred when needed. Groups where you are the only member are deleted. Past results retain a Deleted member place with your name, personal step totals and image removed. Internal identifiers can remain in those results and in a deletion-operation record, which tracks completion and prevents an old session from recreating the account. These retained records should not be understood as a guarantee of complete anonymization.",
+            "For play-points groups, future reserved entries are canceled. An entry in a round that has already started remains in that round’s pool until settlement, without your name or photo being shown. Remaining points disappear when your account is deleted.",
+            "In-app account deletion does not automatically erase separate email correspondence. Contact support@outpaceapp.com if you want us to review a request concerning support emails. Removal from active services and expiration of provider backup copies are separate processes; contact us for information about a pending deletion request."
+          ]
+        },
+        {
+          "heading": "Your choices and requests",
+          "paragraphs": [
+            "You can change your profile, manage friends and blocks, leave groups, control optional activity permissions, clear your city-area preference, report content and delete your account. These controls have different effects: leaving a group, revoking health access or removing the app does not itself delete your entire Outpace account.",
+            "To ask about information associated with your account, request access or correction, or exercise privacy rights available under applicable law, contact support@outpaceapp.com. We may need to verify that a request comes from the account holder before acting on it."
+          ]
+        },
+        {
+          "heading": "Age requirement",
+          "paragraphs": [
+            "Outpace is intended for people 18 and older. Do not create an account if you are under 18. If you believe a person under 18 has provided information to Outpace, contact support@outpaceapp.com so we can review the account."
+          ]
+        },
+        {
+          "heading": "Changes",
+          "paragraphs": [
+            "We will update this policy when the practices it describes change. Material changes will be disclosed in the app before introducing new collection or a money feature. Where a change requires your permission, we will request it separately."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "slug": "terms.html",
+      "title": "Terms of Use",
+      "description": "The terms for using Outpace’s free step-competition app.",
+      "intro": [
+        "These Terms of Use govern your use of Outpace, operated by Vrtl Pirates LLC. By downloading, installing or using Outpace, you agree to these Terms. If you do not agree, do not use the service.",
+        "The Competition Rules describe how rounds, results, winner images and optional play-points groups work. Read them before joining a competition. The Privacy Policy explains how your information is handled; permissions that require a separate choice are requested in the app."
+      ],
+      "sections": [
+        {
+          "heading": "The free service",
+          "paragraphs": [
+            "Outpace lets friends and groups compare step totals and gives daily winners the ability to choose a shared background image, subject to the Competition Rules and photo review. The release covered by these Terms is free. It does not offer paid entries, cash prizes, withdrawals, charitable transfers or subscriptions.",
+            "Any play points are non-redeemable in-app points. They have no cash value and cannot be purchased, sold, transferred for money, withdrawn or donated. A future paid service would require its own disclosed terms and payment authorization before any charge."
+          ]
+        },
+        {
+          "heading": "Eligibility and your account",
+          "paragraphs": [
+            "You must be at least 18 years old to use Outpace. By creating an account, you confirm that you meet this requirement and can agree to these Terms.",
+            "Use a supported sign-in method and truthful account information. You choose your display name and are responsible for keeping your account secure. Do not impersonate someone else or access another person’s account without permission. Contact support@outpaceapp.com if you believe your account has been misused."
+          ]
+        },
+        {
+          "heading": "Health information and safe activity",
+          "paragraphs": [
+            "Health access is optional. Granting health permissions lets Outpace read the permitted data on your device and sync the aggregates described in the Privacy Policy. You may revoke those permissions in your device settings. Revoking access does not delete data already synced.",
+            "Step counts depend on your device, health-data sources, permissions and successful syncing. Outpace does not guarantee the accuracy or availability of a device’s measurements. Competition deadlines and the treatment of missing or late data are explained in the Competition Rules.",
+            "Outpace provides social fitness competition, not medical advice. Choose activity appropriate for your circumstances. Do not ignore pain, injury or unsafe conditions to compete, and seek qualified medical advice when needed."
+          ]
+        },
+        {
+          "heading": "Fair use and conduct",
+          "paragraphs": [
+            "Use Outpace lawfully and respectfully. You must not manipulate step counts or rankings through fraudulent means; impersonate others; post harassment, sexual content, graphic violence, spam or another person’s private information; infringe someone else’s rights; disrupt the service; or attempt unauthorized access to accounts, systems or data.",
+            "Do not use bots or scripts to manipulate the service. Do not reverse-engineer, decompile or disassemble the app except where applicable law permits you to do so. The reporting and blocking controls are available for concerns about users or content."
+          ]
+        },
+        {
+          "heading": "Your photos and other content",
+          "paragraphs": [
+            "You remain responsible for the names, photos, reactions and other content you submit. Only upload material you own or have permission to use and share with the relevant audience.",
+            "You grant Vrtl Pirates LLC a non-exclusive, worldwide, royalty-free permission to store, process, resize, review and display your submitted content as needed to provide Outpace, including showing it to the friends or groups with whom it is shared. This permission does not grant Outpace ownership of your content or permission to use it in unrelated advertising.",
+            "Winner photos must pass review before publication. Outpace may reject or remove content that violates these Terms. Group admins and friends-circle viewers have the image-removal controls described in the Competition Rules. Removing content from Outpace cannot retrieve copies another person has already saved outside the service."
+          ]
+        },
+        {
+          "heading": "Outpace intellectual property",
+          "paragraphs": [
+            "Outpace’s software, designs, graphics, branding and other service materials are protected by intellectual-property laws and belong to Vrtl Pirates LLC or its licensors. These Terms do not transfer ownership of those materials to you. You may not copy, modify or distribute them except as the service allows or applicable law permits."
+          ]
+        },
+        {
+          "heading": "Account deletion and termination",
+          "paragraphs": [
+            "You may stop using Outpace at any time and request deletion from Account & privacy in the app. Deleting the app from your device does not itself delete your account. The Account Deletion page and Privacy Policy explain what deletion removes and what happens to shared groups, past results and play points.",
+            "We may remove content or restrict access to address a violation of these Terms, unlawful activity or a security threat. You can contact support@outpaceapp.com about an access restriction or moderation decision.",
+            "If your access ends, you must stop using that account. This does not remove rights you have under applicable law."
+          ]
+        },
+        {
+          "heading": "Service availability",
+          "paragraphs": [
+            "Features may change as Outpace develops, and interruptions or errors can occur. Step counts depend on device measurements and successful syncing, so we do not guarantee that every measurement or result will be accurate or continuously available.",
+            "Nothing in these Terms limits a warranty, remedy or other right that cannot lawfully be limited."
+          ]
+        },
+        {
+          "heading": "Changes to these Terms",
+          "paragraphs": [
+            "We may update these Terms. We will notify you of material changes through the app and identify when the updated Terms take effect. Where applicable law requires agreement to a change, we will obtain it. If you do not agree to updated Terms, stop using the service. We will not charge you for a future paid feature without the required payment authorization."
+          ]
+        },
+        {
+          "heading": "General terms and contact",
+          "paragraphs": [
+            "If a provision is held invalid or unenforceable, it will be limited or removed to the extent necessary, and the remaining provisions will continue to apply. Nothing in these Terms limits rights you have under mandatory consumer law.",
+            "These Terms and the Competition Rules form the agreement concerning the free service described here. The Privacy Policy explains the handling of your information.",
+            "For questions about these Terms, contact Vrtl Pirates LLC at support@outpaceapp.com."
+          ]
+        }
+      ]
+    },
+    "rules": {
+      "slug": "rules.html",
+      "title": "Competition Rules",
+      "description": "How Outpace’s daily finish, tied results, winner backgrounds and play points work.",
+      "intro": [
+        "These rules cover Outpace’s free step competitions and optional non-redeemable play-points groups for adults 18 and older. Vrtl Pirates LLC sponsors and administers these competitions. Apple is not a sponsor and is not involved in them in any manner.",
+        "There are no paid entries, cash prizes or charitable transfers in this release. Your Terms of Use and the rules for the group you join also apply."
+      ],
+      "sections": [
+        {
+          "heading": "The daily round",
+          "paragraphs": [
+            "Each group uses one chosen timezone and an 8 p.m. to 8 p.m. round. Friends competitions use Pacific time. Check the competition’s clock rather than assuming it follows the timezone on your phone.",
+            "Daily-win eligibility begins with your first full round after joining and activation. Joining after a round has started does not qualify you to win that partial round.",
+            "Sync your steps before the 8 p.m. deadline. Results lock at the deadline using the eligible totals available to Outpace. A later sync can update activity history and current displays without changing a locked award."
+          ]
+        },
+        {
+          "heading": "Steps and ranking",
+          "paragraphs": [
+            "Outpace uses permitted step totals from Apple Health or, in a supported Android version, Health Connect. Health access and a successful sync are needed to provide a competition total.",
+            "A confirmed zero is an eligible total. Unavailable health data is unranked. Missing data is not silently treated as zero.",
+            "Do not falsify steps, submit manipulated data or otherwise try to gain an unfair ranking. If a total or result looks wrong, use Help & feedback to report it. The service cannot guarantee that every device measures steps identically."
+          ]
+        },
+        {
+          "heading": "The winner background",
+          "paragraphs": [
+            "The highest eligible step total wins the daily round. If eligible leaders are tied, they share first place. One stored server-side draw selects which tied leader receives the right to choose the background image. That image selection does not change their tied ranks.",
+            "The selected winner’s approved default photo is used if available. The winner may choose another photo for that win until the next winning result. A submitted photo must pass review before it is shared.",
+            "Group admins can remove a winner image. A friends-circle viewer can remove an image from their own circle. When an image is removed, a neutral background remains until the next winner."
+          ]
+        },
+        {
+          "heading": "Weekly and monthly badges",
+          "paragraphs": [
+            "Weeks run Monday through Sunday. Months follow the calendar. Daily results are assigned by the round’s closing date in the competition timezone. Longer-period awards use locked daily results. All tied leaders receive the relevant weekly or monthly badge."
+          ]
+        },
+        {
+          "heading": "Optional play-points groups",
+          "paragraphs": [
+            "Verified accounts receive 1,000 play points once. Points have no cash value and cannot be bought, sold for money, withdrawn, donated or redeemed.",
+            "A play-points group has one fixed daily entry amount for every competitor. Review that amount and accept automatic-entry terms before joining. The first full entry is reserved immediately, and future entries are prepared before the next round starts. Missed reservations are not charged retroactively.",
+            "If you do not have enough points for a new round, you remain a member but sit out that round’s points prize. Tied points awards are split deterministically, separately from the background-image draw.",
+            "Leaving before a reserved round starts returns that entry’s points. Leaving or deleting your account after a round starts leaves that entry in the pool without your name or photo being shown. If a group is canceled or a round has no available step data, held entries are returned to remaining accounts. Unused points disappear when an account is deleted."
+          ]
+        },
+        {
+          "heading": "Groups and visibility",
+          "paragraphs": [
+            "Public groups allow anyone to join. Private groups require an invitation. Nearby discovery shows only public groups whose admins opted in, using a broad city area selected manually. It does not use GPS or show a nearby-person directory.",
+            "Hiding a friend changes your roster. Blocking hides reactions and photos across that connection. Shared-group competition records continue to follow group membership."
+          ]
+        },
+        {
+          "heading": "Respect the group",
+          "paragraphs": [
+            "Do not post harassment, sexual content, graphic violence, spam or private information about another person. Upload only images you have permission to share.",
+            "Report concerning content in the app and use the block controls for unwanted connections. Outpace may reject photos, and group admins may remove winner images. Outpace may remove groups from discovery following review."
+          ]
+        },
+        {
+          "heading": "Questions and account deletion",
+          "paragraphs": [
+            "Use your avatar, Settings, then Help & feedback to report a result, syncing problem or content concern. Replies appear in the app. You can also contact support@outpaceapp.com.",
+            "Account deletion closes access once the server accepts the request and starts removal of your personal information. Shared groups may continue, and past results retain a Deleted member place without your name, personal step totals or photo. See Account Deletion for details."
+          ]
+        }
+      ]
+    },
+    "delete-account": {
+      "slug": "delete-account.html",
+      "title": "Delete Your Account",
+      "description": "How to delete your Outpace account and what happens to your data.",
+      "intro": [
+        "You can request permanent account deletion from inside Outpace. Removing the app from your phone does not delete your account."
+      ],
+      "sections": [
+        {
+          "heading": "Request deletion in the app",
+          "steps": [
+            "Open your avatar and go to Settings.",
+            "Open Account & privacy, then choose Delete account.",
+            "Read the effects of deletion, type DELETE and confirm."
+          ],
+          "paragraphs": [
+            "Once the server accepts your request, the account closes immediately. A server workflow removes the data and sign-in identity and continues even if you close the app. The deletion screen shows progress and indicates if the server is retrying a delayed step."
+          ]
+        },
+        {
+          "heading": "What is removed",
+          "paragraphs": [
+            "The deletion process removes your profile, personal step and activity history, uploaded images, social connections, reactions, in-app support conversations, app diagnostics, image-review records and Clerk sign-in identity."
+          ]
+        },
+        {
+          "heading": "What happens to groups and results",
+          "paragraphs": [
+            "Groups with other members continue. If administration needs to transfer, an existing remaining admin is preferred; otherwise, the oldest available remaining member becomes admin. Groups where you are the only member are deleted.",
+            "Historical results retain a Deleted member place, with your name, personal step totals and photo removed. Internal result identifiers and a deletion-operation record remain to track completion and prevent an old authenticated session from recreating the account."
+          ]
+        },
+        {
+          "heading": "What happens to play points",
+          "paragraphs": [
+            "Reserved entries for rounds that have not started are canceled. Entries for a round that has started stay in that round’s pool without your name or photo being shown until settlement. Your remaining play points disappear. Points have no cash value."
+          ]
+        },
+        {
+          "heading": "If you cannot access your account",
+          "paragraphs": [
+            "Email support@outpaceapp.com for help with deletion. Use the email address associated with your account when possible. Include that you want to delete your Outpace account, but do not send passwords or sign-in codes. We may need to verify that you control the account.",
+            "In-app deletion does not automatically erase separate email correspondence. Contact support@outpaceapp.com for a request about support emails. Deletion from active services and expiration of provider backup copies are separate processes; contact support if you need information about a pending request."
+          ]
+        }
+      ]
+    },
+    "support": {
+      "slug": "support.html",
+      "title": "Outpace Support",
+      "description": "Get help with syncing, competitions, photos, account access or deletion.",
+      "intro": [
+        "For help in the app, open your avatar, choose Settings, then Help & feedback. Replies appear there. You can also email support@outpaceapp.com."
+      ],
+      "sections": [
+        {
+          "heading": "Steps or results look wrong",
+          "paragraphs": [
+            "Check that Outpace has permission to read steps in Apple Health or Health Connect, then open the app to sync. Compare the same competition window and timezone: a round runs from 8 p.m. to 8 p.m., rather than midnight to midnight.",
+            "A confirmed zero and missing health data are treated differently. A late sync can update your activity without changing a locked winner. If you still need help, include your app version, device type, competition and the approximate time of the issue."
+          ]
+        },
+        {
+          "heading": "Report a photo or another concern",
+          "paragraphs": [
+            "Use the in-app report control for harassment, sexual content, graphic violence, spam or private information. Group admins can remove winner images, and block controls hide photos and reactions across a connection. Shared-group competition records follow group membership.",
+            "If you cannot use the in-app controls, email support@outpaceapp.com with enough information to identify the concern. Avoid sending someone else’s unnecessary private information."
+          ]
+        },
+        {
+          "heading": "Account access and privacy",
+          "paragraphs": [
+            "Contact support for a sign-in problem, a question about your information or help with an account-deletion request. Never send your password, a verification code, payment credentials or unnecessary medical details.",
+            "To delete your account, use Account & privacy, then Delete account. The Account Deletion page explains the process and what happens to your groups, results and play points."
+          ]
+        }
+      ]
+    }
+  }
+}
