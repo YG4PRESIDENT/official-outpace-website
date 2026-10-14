@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local design and policy review evidence
+review/
+playwright-report/
+test-results/
