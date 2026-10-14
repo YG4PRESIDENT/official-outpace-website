@@ -276,7 +276,7 @@ test('footer links remain keyboard accessible, decorative content stays hidden, 
   await nav.getByRole('link', { name: 'How it works', exact: true }).focus();
   await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/how-it-works\.html$/);
-  await expect(page.locator('main')).toContainText('Confirm you’re 18 or older');
+  await expect(page.locator('main')).toContainText('confirm you’re 18 or older');
   await expect(page.locator('main')).toContainText('Outpace is for adults 18 and older.');
   for (const [route, text] of [
     ['/terms.html', 'You must be at least 18 years old to use Outpace.'],
