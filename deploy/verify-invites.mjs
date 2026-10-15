@@ -28,6 +28,21 @@ const head = await request('/i/' + token, 'HEAD');
 assert.equal(head.status, 200); assert.equal(await head.text(), '');
 for (const path of ['/i/bad', '/i/' + token + '?tracking=1', '/i/' + token + '/', '/_invite.html']) assert.equal((await request(path)).status, 404);
 assert.equal((await request('/i/' + token, 'POST')).status, 405);
+const group = await request('/i/group/' + token.toLowerCase());
+assert.equal(group.status, 200);
+assert.equal(group.headers.get('Cache-Control'), 'no-store, no-transform');
+assert.equal(group.headers.get('Referrer-Policy'), 'no-referrer');
+assert.equal(group.headers.get('X-Robots-Tag'), 'noindex, nofollow, noarchive');
+const groupHTML = await group.text();
+assert.ok(groupHTML.includes('outpace://group-invite?code=' + token));
+assert.ok(!groupHTML.includes('outpace://invite?code='));
+assert.ok(!groupHTML.includes('__OUTPACE_INVITE_CODE__'));
+assert.ok(!/<script|<form|http-equiv="refresh"/i.test(groupHTML));
+assert.ok(!/property="og:[^"]+"[^>]*ABCDEF/i.test(groupHTML));
+const groupHead = await request('/i/group/' + token, 'HEAD');
+assert.equal(groupHead.status, 200); assert.equal(await groupHead.text(), '');
+for (const path of ['/i/group/bad', '/i/group/' + token + '?tracking=1', '/i/group/' + token + '/', '/_group-invite.html']) assert.equal((await request(path)).status, 404);
+assert.equal((await request('/i/group/' + token, 'POST')).status, 405);
 const aasa = await request('/.well-known/apple-app-site-association');
 assert.equal(aasa.status, 200); assert.equal(aasa.headers.get('Content-Type'), 'application/json');
 const association = await aasa.json();
@@ -44,4 +59,4 @@ for (const path of ['/how-it-works', '/privacy', '/terms', '/rules', '/support',
 }
 assert.equal((await request('/privacy.html')).status, 200);
 assert.equal((await request('/')).status, 200);
-console.log('PASS: prepared invite requests, token-safe generic preview, explicit app opening, restricted associations and preserved public routes. No live/device verification.');
+console.log('PASS: prepared friend/group invite requests, token-safe generic preview, explicit app opening, restricted associations and preserved public routes. No live/device verification.');
