@@ -43,6 +43,14 @@
           ]
         },
         {
+          "heading": "Optional notifications",
+          "paragraphs": [
+            "Notifications are optional. You can choose personal progress alerts, winner-photo alerts and reactions from accepted friends and group members in Notifications settings. Reaction alerts require a separate choice. The optional daily reminder is scheduled on your phone. You can turn alerts off in Outpace or your phone’s notification settings without losing access to the app.",
+            "To deliver remote alerts, Outpace stores your notification choices and an account-linked device record containing an app-generated installation identifier, Expo push token, platform, timezone and registration time. Alert records contain identifiers, timing and delivery state; provider ticket records can temporarily include device tokens. Turning an alert preference off stops future dispatch for that preference but does not itself erase the device record.",
+            "Outpace sends the push token and notification text through Expo’s push service and your platform’s notification service, such as Apple Push Notification service on iPhone. Progress alerts can include your synced step total and progress toward your goal. Reaction alerts can include the sender’s display name and emoji. This information is processed for delivery and may appear on your Lock Screen. Your phone’s notification-preview settings control what is visible there."
+          ]
+        },
+        {
           "heading": "City-area discovery",
           "paragraphs": [
             "You may manually choose a broad US city area to discover public groups whose admins have opted into discovery. This feature does not request GPS or create a directory of nearby people. You can clear your selected area, hide a group from your discovery list or change the discovery setting for a group you administer."
@@ -64,7 +72,7 @@
         {
           "heading": "Providers and website requests",
           "paragraphs": [
-            "Outpace uses Clerk for authentication and Convex for application data and hosted services. These providers process the information needed to perform their services, including relevant network, device and security metadata. This is separate from information you choose to share with friends and groups.",
+            "Outpace uses Clerk for authentication, Convex for application data and hosted services, and Expo and platform notification services for optional remote alerts. These providers process the information needed to perform their services, including relevant network, device and security metadata. This is separate from information you choose to share with friends and groups.",
             "When you visit the website, your browser sends the information needed to request its pages and resources, such as your IP address and browser request information, to the services delivering them. Information you send through support is handled as described above."
           ]
         },
@@ -72,7 +80,8 @@
           "heading": "Retention and account deletion",
           "paragraphs": [
             "Account information, social records and activity history are retained to provide your account and its history until you remove the relevant information through an available control or delete your account. Unused earlier image assets become eligible for cleanup after 90 days. Current default photos remain while selected on your account, and images referenced by retained results can remain with those results. Deleting a group removes images uploaded specifically for its results; a default photo still used by your account or another result can remain.",
-            "You can request deletion inside the app. Once the server accepts the request, access to the account closes immediately. A server workflow then removes your personal step and activity history, uploaded image assets, social information, in-app support messages, diagnostics, image-review records and Clerk sign-in identity. The workflow continues if you close the app and retries delayed steps.",
+            "Outpace’s alert-event records are scheduled for cleanup after seven days; cleanup can take additional time. Notification preferences remain with your account until account deletion; device registrations can be removed when that installation is unlinked or the account is deleted. Preferences and device registrations do not have the alert-event records’ seven-day expiry. Provider processing and retention are separate from Outpace’s alert-event cleanup.",
+            "You can request deletion inside the app. Once the server accepts the request, access to the account closes immediately. A server workflow then removes your personal step and activity history, uploaded image assets, social information, in-app support messages, diagnostics, image-review records, notification preferences, registered devices and alert records, and Clerk sign-in identity. The workflow continues if you close the app and retries delayed steps.",
             "Groups with other members continue, with administration transferred when needed. Groups where you are the only member are deleted. Past results retain a Deleted member place with your name, personal step totals and image removed. Internal identifiers can remain in those results and in a deletion-operation record, which tracks completion and prevents an old session from recreating the account. These retained records should not be understood as a guarantee of complete anonymization.",
             "For play-points groups, future reserved entries are canceled. An entry in a round that has already started remains in that round’s pool until settlement, without your name or photo being shown. Remaining points disappear when your account is deleted.",
             "In-app account deletion does not automatically erase separate email correspondence. Contact support@outpaceapp.com if you want us to review a request concerning support emails. Removal from active services and expiration of provider backup copies are separate processes; contact us for information about a pending deletion request."
@@ -81,7 +90,7 @@
         {
           "heading": "Your choices and requests",
           "paragraphs": [
-            "You can change your profile, manage friends and blocks, leave groups, control optional activity permissions, clear your city-area preference, report content and delete your account. These controls have different effects: leaving a group, revoking health access or removing the app does not itself delete your entire Outpace account.",
+            "You can change your profile, manage friends and blocks, leave groups, control optional activity permissions and notification preferences, clear your city-area preference, report content and delete your account. These controls have different effects: leaving a group, revoking health access or removing the app does not itself delete your entire Outpace account.",
             "To ask about information associated with your account, request access or correction, or exercise privacy rights available under applicable law, contact support@outpaceapp.com. We may need to verify that a request comes from the account holder before acting on it."
           ]
         },
