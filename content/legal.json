@@ -66,13 +66,14 @@
           "heading": "Support and diagnostics",
           "paragraphs": [
             "When you use Help & feedback, Outpace stores your message and the support conversation so we can respond in the app. If you contact us by email, we receive your email address and the information you include. Please do not send passwords, sign-in codes, payment credentials or unnecessary medical details.",
-            "App diagnostics are associated with your account and record a fixed error code, platform, build and time. They help us investigate app failures. The current app diagnostic records are scheduled for deletion after 30 days and are also removed by account deletion."
+            "Outpace’s render diagnostics are associated with your account and record a fixed error code, platform, build and time. They help us investigate app failures. These Outpace records are scheduled for deletion after 30 days and are also removed by account deletion. Service-provider diagnostics and network records have separate retention policies."
           ]
         },
         {
           "heading": "Providers and website requests",
           "paragraphs": [
-            "Outpace uses Clerk for authentication, Convex for application data and hosted services, and Expo and platform notification services for optional remote alerts. These providers process the information needed to perform their services, including relevant network, device and security metadata. This is separate from information you choose to share with friends and groups.",
+            "Outpace uses Clerk for authentication, Convex for application data and hosted services, Expo for compatible app updates and optional remote alerts, and platform notification services for remote-alert delivery. These providers process the information needed to perform their services, including relevant network, device and security metadata. This is separate from information you choose to share with friends and groups.",
+            "In app versions with EAS Update, update checks send Expo a random app-installation identifier, operating-system platform, native runtime, update and channel information. Startup recovery can also send an error diagnostic. The installation identifier is stored on your phone separately from your Outpace account and may remain after account deletion. Update checks do not add your health totals, photos or Outpace authentication credentials. Expo processes related network and operational records under its privacy policy; Outpace’s 30-day render-diagnostic cleanup does not set Expo’s retention period.",
             "When you visit the website, your browser sends the information needed to request its pages and resources, such as your IP address and browser request information, to the services delivering them. Information you send through support is handled as described above."
           ]
         },
