@@ -16,9 +16,11 @@ export default {
     // the explicit app-opening link; no identity lookup or auto-accept occurs.
     if (url.pathname.startsWith('/i/')) {
       if (!['GET', 'HEAD'].includes(request.method)) return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD', 'Cache-Control': 'no-store' } });
-      const match = /^\/i\/([a-f0-9]{32})$/i.exec(url.pathname);
+      const friend = /^\/i\/([a-f0-9]{32})$/i.exec(url.pathname);
+      const group = /^\/i\/group\/([a-f0-9]{32})$/i.exec(url.pathname);
+      const match = group ?? friend;
       if (!match || url.search || url.hash) return new Response('Invitation not found', { status: 404, headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow, noarchive', 'Referrer-Policy': 'no-referrer' } });
-      const asset = new URL('/_invite.html', url.origin);
+      const asset = new URL(group ? '/_group-invite.html' : '/_invite.html', url.origin);
       const template = await env.ASSETS.fetch(new Request(asset, { method: 'GET', headers: request.headers }));
       if (template.status !== 200) return new Response('Invitation page is unavailable. Please try again.', { status: 503, headers: { 'Cache-Control': 'no-store' } });
       const html = (await template.text()).replaceAll('__OUTPACE_INVITE_CODE__', match[1].toUpperCase());
@@ -30,7 +32,7 @@ export default {
       headers.set('X-Robots-Tag', 'noindex, nofollow, noarchive');
       return new Response(request.method === 'HEAD' ? null : html, { status: 200, headers });
     }
-    if (url.pathname === '/_invite.html') return new Response('Not found', { status: 404 });
+    if (url.pathname === '/_invite.html' || url.pathname === '/_group-invite.html') return new Response('Not found', { status: 404 });
     if (url.pathname === '/.well-known/apple-app-site-association' || url.pathname === '/.well-known/assetlinks.json') {
       const response = await env.ASSETS.fetch(request);
       const result = new Response(response.body, response);

@@ -7,6 +7,7 @@ This directory brings the existing `outpace-website` worker and custom-domain co
 ## Invitation route
 
 - `/i/<32 hex characters>` renders a generic first-party preview and an explicit **Open Outpace** link using the existing `outpace://invite?code=...` fallback.
+- `/i/group/<32 hex characters>` renders a generic group invitation and an explicit **Open group invite** link using `outpace://group-invite?code=...`. It reveals no group name, people or membership and does not join automatically. The app preserves the link through sign-in/setup, previews the real group, then requires Join/Open.
 - The page does not fetch a person's identity, accept friendships, set cookies, run JavaScript or claim installation recovery. The app verifies the invitation after sign-in; acceptance is explicit.
 - Invitation pages return `no-store`, `no-referrer` and `noindex`. Existing public routes, policies and Clerk DNS configuration are preserved. No custom URL/token logging is added.
 - Invalid invitation paths return 404; unsupported methods return 405. No bearer token is inserted into social metadata. No guessed or unpublished store links are presented.
